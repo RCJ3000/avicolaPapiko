@@ -62,7 +62,7 @@ body {
 
 .banner {
     width: 100%;
-    height: auto; /* Permite que la imagen mantenga sus proporciones */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,10 +70,10 @@ body {
 }
 
 .banner img {
-    display: block; /* elimina el espacio fantasma debajo de la imagen */
+    display: block;
     width: 100%;
-    height: auto; /* Ajusta la altura */
-    object-fit:contain; /* Cubre el área sin distorsionar mucho la imagen */
+    height: auto;
+    object-fit: cover; /* cambia a cover para ocupar todo el ancho */
 }
 
 @media (max-width: 768px) {
@@ -117,22 +117,20 @@ body {
     }
 
     .banner {
-        margin-top: 0;
-        padding-top: 0;
         width: 100%;
-        height: auto; /* que se ajuste a la imagen */
-        overflow: hidden;
+        aspect-ratio: 725 / 935;
+        background-image: url("imagenes/banner_vertical.png");
+        background-size: contain;   /* muestra toda la imagen sin recortes */
+        background-position: top;
+
     }
 
     .banner img {
-        display: block; /* clave para quitar la franja */
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        object-position: center;
+        display: none; /* oculta el <img> ya que usamos background */
     }
 
+    /* Ajuste del logo */
     .logo img {
-        height: 60px;
+        height: 70px; /* un poco más pequeño para móviles */
     }
 }
