@@ -65,6 +65,36 @@ body {
 } /* clave para el posicionamiento */
 #toggle-sedes { cursor: pointer; user-select: none; }
 
+/* Estilo general de los enlaces */
+.menu a, 
+.submenu span {
+    color: #f96604;       /* Naranja */
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover en enlaces principales */
+.menu a:hover,
+.submenu span:hover {
+    color: #453281;       /* Morado */
+}
+
+/* Submenú enlaces */
+.submenu-opciones a {
+    display: block;
+    padding: 8px 15px;
+    color: #f96604;       /* Naranja también */
+    text-decoration: none;
+}
+
+/* Hover en submenú */
+.submenu-opciones a:hover {
+    background-color: #f0f0f0;
+    color: #453281;       /* Morado en hover */
+}
+
+
 .submenu-opciones {
     color: #453281;
     display: none;
@@ -146,6 +176,11 @@ body {
     width: 50%;
 }
 
+h1 {
+    font-size: 1rem;
+    color: #b63113
+}
+
 .texto-descriptivo h2 {
     font-size: 2.5rem;
     color: #171651;
@@ -159,31 +194,6 @@ body {
     color: #453281;
 }
 
-h4 {
-    color: #ffffff;
-    border-radius: 10px;
-    background-color: #171651;
-    margin: auto;
-    margin-bottom: 20px;
-    padding: 35px;
-    font-size: 1.7rem;
-}
-.redes-sociales {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-.redes-content {
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
-.redes-content img {
-    border-radius: 15px;
-}
 
 .productos {
     background-color: #ffffff;
@@ -211,12 +221,58 @@ h4 {
     display: block;     /* asegura el centrado */
     margin: 0 auto;     /* centra en caso de no usar flex */
 }
+h3 {
+    color: rgb(222, 72, 77);
+}
+.tipos-gallina p,
+.tipos-servicios p,
+.implementos-crianza p {
+    color: #453281;
+}
+
+.redes-sociales {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+h4 {
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #171651;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 35px;
+    font-size: 1.7rem;
+}
+
+.redes-content {
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    margin: auto;
+}
+.redes-content img {
+    box-sizing: border-box;
+    height: auto;
+    border-radius: 15px;
+
+}
 
 .mapa-contenedor {
     padding: 15px;
     margin-top: 50px;
     text-align: center;
 }
+.mapa {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: none;
+
+}
+
 h5 {
     color: #453281;
     font-size: 1.8rem;
@@ -320,4 +376,48 @@ h5 {
         text-align: justify;
         text-justify: inter-word; /* distribuye mejor el espaciado */
     }
+
+    .productos {
+        flex-direction: column;   /* ahora se apilan en columna */
+        align-items: center;      /* centrados */
+    }
+
+    .tipos-gallina,
+    .tipos-servicios,
+    .implementos-crianza {
+        width: 90%;       /* ocupan casi todo el ancho */
+        padding: 15px 0;
+    }
+
+    .tipos-gallina img,
+    .tipos-servicios img,
+    .implementos-crianza img {
+        width: 80%;       /* imagen más grande en móvil */
+    }
+
+    h3, 
+    .tipos-gallina p,
+    .tipos-servicios p,
+    .implementos-crianza p {
+        text-align: center; /* mejor en móviles que justificar */
+    }
+
+
+    .redes-content {
+        flex-direction: column;
+        box-sizing: border-box;
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        align-items: center;
+        margin: auto;
+    }
+
+    .redes-content img {
+        padding: 20px;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
 }
