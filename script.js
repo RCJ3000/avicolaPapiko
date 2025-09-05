@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+    initSubmenuSedes();
+    initHamburgerMenu();
+});
+
+/* --- SUBMENÚ SEDES --- */
+function initSubmenuSedes() {
     const toggle = document.getElementById("toggle-sedes");
-    const liSubmenu = toggle.closest(".submenu");
+    const liSubmenu = toggle?.closest(".submenu");
 
     if (!toggle || !liSubmenu) return;
 
@@ -9,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggle.setAttribute("aria-expanded", "true");
         toggle.textContent = "Sedes ▲";
     };
+
     const close = () => {
         toggle.setAttribute("aria-expanded", "false");
         liSubmenu.classList.remove("open");
@@ -20,10 +27,27 @@ document.addEventListener("DOMContentLoaded", () => {
         liSubmenu.classList.contains("open") ? close() : open();
     });
 
-    // Evita que un click dentro del menú lo cierre
     const menu = document.getElementById("sedes-menu");
     menu.addEventListener("click", (e) => e.stopPropagation());
 
-    // Cierra al hacer click fuera
     document.addEventListener("click", close);
-});
+}
+
+/* --- MENÚ HAMBURGUESA --- */
+function initHamburgerMenu() {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    if (!hamburger || !navLinks) return;
+
+    hamburger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle("active");
+    });
+
+    document.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+
+    navLinks.addEventListener("click", (e) => e.stopPropagation());
+}

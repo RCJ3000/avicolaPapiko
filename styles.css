@@ -311,21 +311,46 @@ h6 {
         margin-top: 0;
     }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #fff;
+    .links {
+        display: none; /* oculto por defecto en móvil */
         position: absolute;
-        top: 60px;
+        top: 70px; /* debajo del header */
         right: 0;
-        width: 200px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        padding: 10px;
+        background: #fff;
+        width: 220px;
+        border: 1px solid #ddd;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.15);
+        z-index: 999; /* para que quede arriba */
     }
 
-    .menu.show {
+    .links.active {
+        display: block; /* se muestra al hacer click en la hamburguesa */
+    }
+
+    .menu {
+        list-style: none;
         display: flex;
+        flex-direction: column; /* enlaces en columna */
+        gap: 10px;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        padding: 8px 0;
+        display: block;
+    }
+
+    /* submenú dentro del desplegable */
+    .submenu-opciones {
+        position: static;  /* importante: no flotante */
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 15px;
     }
 
     .hamburger {
