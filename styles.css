@@ -200,7 +200,15 @@ h1 {
     box-sizing: border-box;
     width: 100%;
     display: flex;
+    flex-direction: column;
 }
+
+
+
+.tipos-productos {
+    display: flex;
+}
+
 .tipos-gallina,
 .tipos-servicios,
 .implementos-crianza {
@@ -221,12 +229,19 @@ h1 {
     display: block;     /* asegura el centrado */
     margin: 0 auto;     /* centra en caso de no usar flex */
 }
-h3 {
-    color: rgb(222, 72, 77);
+h4 {
+    border-radius: 12px;
+    background-color: #801341;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
 }
 .tipos-gallina p,
 .tipos-servicios p,
 .implementos-crianza p {
+    width: 60%;
+    font-size: 1.4rem;
+    font-family: sans-serif;
     color: #453281;
 }
 
@@ -237,7 +252,7 @@ h3 {
     box-sizing: border-box;
 }
 
-h4 {
+h3, h5 {
     color: #ffffff;
     border-radius: 10px;
     background-color: #171651;
@@ -273,7 +288,7 @@ h4 {
 
 }
 
-h5 {
+h6 {
     color: #453281;
     font-size: 1.8rem;
     font-family: sans-serif;
@@ -380,6 +395,11 @@ h5 {
     .productos {
         flex-direction: column;   /* ahora se apilan en columna */
         align-items: center;      /* centrados */
+    }
+
+    .tipos-productos {
+        display: flex;
+        flex-direction: column;
     }
 
     .tipos-gallina,
