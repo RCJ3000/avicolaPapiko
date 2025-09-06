@@ -13,6 +13,9 @@ body {
 
 /* Encabezado superior */
 .cabezera {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
 }
