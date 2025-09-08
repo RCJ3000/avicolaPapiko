@@ -13,7 +13,8 @@ body {
 
 /* Encabezado superior */
 .cabezera {
-    position: fixed;
+    top: 0;
+    position: sticky;
     width: 100%;
     z-index: 1000;
     background-color: #ffffff;
